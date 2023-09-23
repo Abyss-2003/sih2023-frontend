@@ -22,12 +22,10 @@ const Navbar = () => {
         <Link to="/" onClick={close}><img src={Logo} alt="" className="logo" style={{width:"100px"}}/></Link>
       </div>
       <div className="navbar__right">
-        <Link to='/login'><h4 className="navbar__text">Home</h4></Link>
+        <Link to='/'><h4 className="navbar__text">Home</h4></Link>
         <Link to='/login'><h4 className="navbar__text">About</h4></Link>
-        <Link to='/login'><h4 className="navbar__text">Services</h4></Link>
-        <Link to='/login'><h4 className="navbar__text">Schedule</h4></Link>
-        <Link to='/login'><h4 className="navbar__text">Contact</h4></Link>
-        <Link to='/login'><h4 className="navbar__text">Become A Member</h4></Link>
+        <Link to='/login'><h4 className="navbar__text">Contact Us</h4></Link>
+        <Link to='/login'><h4 className="navbar__text">Login/SignUp</h4></Link>
         <AiOutlineMenu className="navbar__menu" onClick={()=>{setShowNav(false);setAnimate(0)}}/>
       </div>
     </div>
