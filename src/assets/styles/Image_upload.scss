@@ -1,0 +1,34 @@
+.upload {
+    display: flex;
+    font-family: arial, sans-serif;
+  }
+  
+  .item  {
+    width: 50%;
+    padding: 2em;
+    color: #ffffff;
+    background: rgb(53, 52, 52);
+    min-height: 600px;
+  }
+  
+  .right {
+    color: #222;
+    background: #ccc;
+  }
+  
+  @media screen and (max-width: 600px){
+    
+    .upload {
+      flex-direction: column-reverse;  
+    }
+    
+    .item-left {
+      width: auto;
+      min-height: 200px;
+    }
+    
+    .item-right {
+      background: #aa0000;
+    }
+    
+  }

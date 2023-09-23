@@ -1,15 +1,43 @@
 import React, { useState } from "react";
-import "./Navbar.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineMenu } from 'react-icons/ai';
 import { RxCross1 } from 'react-icons/rx';
-import Logo from "../../assets/images/stat.jpg";
-const Navbar = () => {
+import axios from "axios";
+import "../assets/styles/Navbar.scss";
+import Logo from "../assets/images/stat.jpg";
+
+const Navbar = ({userDetails}) => {
   const [showNav, setShowNav]=useState(true);
   const [animate,setAnimate]=useState(0);
+  const navigate = useNavigate()
+
   const close=()=>{
     setAnimate(1);
     setTimeout(()=>setShowNav(true),300);
+  }
+
+  const handleLogin = async (type) => {
+    const token = localStorage.getItem('token')
+    if(type === "login"){
+      navigate(`/login`)
+    }
+    else{
+      try {
+        const response = await axios.delete(`http://localhost:8000/logout`, {
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          }
+        })
+        if (response.status === 200) {
+          localStorage.removeItem('token')
+          navigate('/')
+          window.location.reload(true)
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
   }
 
   return (<>
@@ -22,12 +50,11 @@ const Navbar = () => {
         <Link to="/" onClick={close}><img src={Logo} alt="" className="logo" style={{width:"100px"}}/></Link>
       </div>
       <div className="navbar__right">
-        <Link to='/login'><h4 className="navbar__text">Home</h4></Link>
+        <Link to='/'><h4 className="navbar__text">Home</h4></Link>
         <Link to='/login'><h4 className="navbar__text">About</h4></Link>
-        <Link to='/login'><h4 className="navbar__text">Services</h4></Link>
-        <Link to='/login'><h4 className="navbar__text">Schedule</h4></Link>
-        <Link to='/login'><h4 className="navbar__text">Contact</h4></Link>
-        <Link to='/login'><h4 className="navbar__text">Become A Member</h4></Link>
+        <Link to='/login'><h4 className="navbar__text">Contact Us</h4></Link>
+        {!userDetails && <h4 className="navbar__text text-white cursor-pointer" onClick={() => {handleLogin("login")}}>Enter</h4>}
+        {userDetails && <h4 className="navbar__text text-white cursor-pointer" onClick={() => {handleLogin("logout")}}>Logout</h4>}
         <AiOutlineMenu className="navbar__menu" onClick={()=>{setShowNav(false);setAnimate(0)}}/>
       </div>
     </div>

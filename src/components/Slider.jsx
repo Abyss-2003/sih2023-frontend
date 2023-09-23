@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import "../assets/styles/Slider.css";
+import "../assets/styles/Slider.scss";
 import workout from '../assets/images/workout.jpg'
 import coach from '../assets/images/coach.jpg'
 import stat from '../assets/images/stat.jpg'
@@ -58,7 +58,7 @@ const Slider = () => {
     ];
   return (
     <div>
-        <div className="container">
+        <div className="containerslider">
       <div className="loadbar" style={{ width: `${loadingProgress}%` }}></div>
       <div id="slide" ref={slideRef}>
         {data.map((item) => (
