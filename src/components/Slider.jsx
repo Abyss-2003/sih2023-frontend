@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import {FaAngleLeft,FaAngleRight} from 'react-icons/fa';
 import "../assets/styles/Slider.scss";
 import workout from '../assets/images/workout.jpg'
 import coach from '../assets/images/coach.jpg'
@@ -77,10 +78,10 @@ const Slider = () => {
       </div>
       <div className="buttons">
         <button id="prev" onClick={handleClickPrev}>
-          <FontAwesomeIcon icon={faAngleLeft} />
+          <FaAngleLeft />
         </button>
         <button id="next" onClick={handleClickNext}>
-          <FontAwesomeIcon icon={faAngleRight} />
+          <FaAngleRight />
         </button>
       </div>
     </div>
