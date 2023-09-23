@@ -1,10 +1,12 @@
-import {useState, useEffect } from 'react';
-import {BrowserRouter} from 'react-router-dom'
-import { Provider } from "react-redux";
+import { useState, useEffect } from 'react'
+import { BrowserRouter } from 'react-router-dom'
 import axios from 'axios';
-import {store} from './redux/store'
+import { ToastContainer } from 'react-toastify';
+import { Provider } from "react-redux"
+import { store } from './redux/store'
 import Home from './routes'
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 function App() {
   const [userDetails, setUserDetails] = useState()
@@ -14,33 +16,46 @@ function App() {
       const token = localStorage.getItem('token');
       if (token) {
         const response = await axios.get(`http://localhost:8000/getuser`, {
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            }
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          }
         })
         if (response.data.user) {
-            setUserDetails(response.data.user)
+          setUserDetails(response.data.user)
         } else {
-            console.log("single user fetch failed");
+          console.log("single user fetch failed");
         }
-      }      
+      }
     } catch (error) {
-        console.log("Fetch user details failed");
-    } 
+      console.log("Fetch user details failed");
+    }
   }
 
   useEffect(() => {
     getUserDetails()
-  },[])
+  }, [])
 
   return (
     <>
-      <Provider store={store}>  
+      <Provider store={store}>
         <BrowserRouter>
-          <Navbar userDetails={userDetails} key={userDetails?._id}/>
-          <Home userDetails={userDetails}/>
-        </BrowserRouter>  
+          <ToastContainer
+            position="top-center"
+            autoClose={2000}
+            hideProgressBar
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover={false}
+            theme="dark"
+          />
+          <Navbar userDetails={userDetails} key={userDetails?._id} />
+          <Home userDetails={userDetails} />
+          <Footer />
+        </BrowserRouter>
       </Provider>
     </>
   );

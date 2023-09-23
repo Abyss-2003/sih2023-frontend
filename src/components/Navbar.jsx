@@ -4,7 +4,7 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import { RxCross1 } from 'react-icons/rx';
 import axios from "axios";
 import "../assets/styles/Navbar.scss";
-import Logo from "../assets/images/stat.jpg";
+// import Logo from "../assets/images/stat.jpg";
 
 const Navbar = ({userDetails}) => {
   const [showNav, setShowNav]=useState(true);
@@ -47,7 +47,7 @@ const Navbar = ({userDetails}) => {
           <div className="sub_nav">
       <div className="navbar">
       <div className="navbar__left" >
-        <Link to="/" onClick={close}><img src={Logo} alt="" className="logo" style={{width:"100px"}}/></Link>
+        {/* <Link to="/" onClick={close}><img src={Logo} alt="" className="logo" style={{width:"100px"}}/></Link> */}
       </div>
       <div className="navbar__right">
         <Link to='/'><h4 className="navbar__text">Home</h4></Link>
@@ -65,7 +65,7 @@ const Navbar = ({userDetails}) => {
       <div className="sub_nav">
       <div className="navbar">
       <div className="navbar__left">
-      <Link to="/" onClick={close}><img src={Logo} alt="" className="logo" style={{width:"100px"}}/></Link>
+      {/* <Link to="/" onClick={close}><img src={Logo} alt="" className="logo" style={{width:"100px"}}/></Link> */}
       </div>
     </div>
     <div className={animate===0?"navbar_content":"navbar_content_close"}>

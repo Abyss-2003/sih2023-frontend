@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import {toast} from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
 import "../assets/styles/LoginSignup.scss";
 import { FaFacebookF, FaGoogle, FaTwitter } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -24,8 +26,6 @@ const LoginSignup = () => {
 
   const handleSign = async (e,type) => {
     e.preventDefault()
-    console.log(type);
-    console.log(details);
     try {
       const token = localStorage.getItem('token')
       const response = await axios.post(`http://localhost:8000/${type}`,details,{
@@ -34,11 +34,33 @@ const LoginSignup = () => {
         }
       })
       if(response.data?.token){
+        toast.success(`${type.charAt(0).toUpperCase()}${type.substring(1)} successful`, {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
         localStorage.setItem('token', response.data.token)
-        navigate('/')
-        window.location.reload()
+        setTimeout(()=>{
+          navigate('/')
+          window.location.reload()
+        },1000)
       }
     } catch (error) {
+      toast.error(`Could not ${type}`, {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        });
       console.log(error);
     }
   }
