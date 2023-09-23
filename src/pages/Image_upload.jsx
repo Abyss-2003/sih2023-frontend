@@ -1,5 +1,5 @@
 import React from 'react'
-import './Image_upload.scss'
+import '../assets/styles/Image_upload.scss'
 import Img_upload_compo from '../components/Img_upload_compo';
 
 function Image_upload() {

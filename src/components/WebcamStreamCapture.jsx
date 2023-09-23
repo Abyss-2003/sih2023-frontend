@@ -1,6 +1,6 @@
 import React from 'react'
 import Webcam from "react-webcam";
-import './WebcamStreamCapture.scss'
+import '../assets/styles/WebcamStreamCapture.scss'
 
 const WebcamStreamCapture = () => {
     const webcamRef = React.useRef(null);

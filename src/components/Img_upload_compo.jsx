@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-router-dom";
 import shortid from "https://cdn.skypack.dev/shortid@2.2.16";
-import './Img_upload_compo.scss'
+import '../assets/styles/Img_upload_compo.scss'
 
 
 const Img_upload_compo = () => {
