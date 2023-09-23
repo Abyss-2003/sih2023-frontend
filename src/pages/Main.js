@@ -2,7 +2,7 @@ import React from 'react'
 import './Main.css'
 import Slider from '../components/Slider'
 
-const Home = () => {
+const Main = () => {
   return (
     <>
     {/* <div>Home</div> */}
@@ -11,4 +11,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Main
