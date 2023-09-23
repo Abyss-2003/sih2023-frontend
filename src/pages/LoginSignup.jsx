@@ -46,7 +46,7 @@ const LoginSignup = () => {
         });
         localStorage.setItem('token', response.data.token)
         setTimeout(()=>{
-          navigate('/')
+          navigate('/home')
           window.location.reload()
         },1000)
       }
@@ -68,7 +68,7 @@ const LoginSignup = () => {
   return (
     <>
     <div className="login-page">
-      <div className={`container ${isSignup ? "right-panel-active" : ""}`}>
+      <div className={`container_loginsignup ${isSignup ? "right-panel-active" : ""}`}>
         <div className="form-container sign-up-container">
           <form >
             <h1>Create Account</h1>

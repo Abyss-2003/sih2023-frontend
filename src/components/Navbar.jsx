@@ -50,7 +50,7 @@ const Navbar = ({userDetails}) => {
         {/* <Link to="/" onClick={close}><img src={Logo} alt="" className="logo" style={{width:"100px"}}/></Link> */}
       </div>
       <div className="navbar__right">
-        <Link to='/'><h4 className="navbar__text">Home</h4></Link>
+        <Link to={userDetails ? '/home' : '/'}><h4 className="navbar__text">Home</h4></Link>
         <Link to='/login'><h4 className="navbar__text">About</h4></Link>
         <Link to='/login'><h4 className="navbar__text">Contact Us</h4></Link>
         {!userDetails && <h4 className="navbar__text text-white cursor-pointer" onClick={() => {handleLogin("login")}}>Enter</h4>}
