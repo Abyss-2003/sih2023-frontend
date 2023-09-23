@@ -1,0 +1,52 @@
+video,
+button {
+  display: block;
+}
+.vdo-upload{
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+.btn-vdo{
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid  rgb(241, 67, 67);
+  border-radius: 0.6em;
+  color:  rgb(241, 67, 67);
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: 20px;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    outline: 0;
+  }
+
+  border-color: rgb(241, 67, 67);
+  color: #fff;
+  background-color:  rgb(246, 129, 129);
+  box-shadow: 0 0 40px 40px  rgb(241, 67, 67) inset, 0 0 0 0  rgb(241, 67, 67);
+  transition: all 150ms ease-in-out;
+  
+  &:hover {
+    box-shadow: 0 0 10px 0  rgb(241, 67, 67) inset, 0 0 10px 4px  rgb(241, 67, 67);
+  }
+}
+.vdo-download{
+  color: black;
+}
