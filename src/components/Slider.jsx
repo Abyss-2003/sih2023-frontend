@@ -1,7 +1,7 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import "./Slider.css";
+import "../assets/styles/Slider.css";
 import workout from '../assets/images/workout.jpg'
 import coach from '../assets/images/coach.jpg'
 import stat from '../assets/images/stat.jpg'

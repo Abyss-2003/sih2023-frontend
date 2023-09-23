@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./LoginSignup.css";
+import "../assets/styles/LoginSignup.css";
 import { FaFacebookF, FaGoogle, FaTwitter } from "react-icons/fa";
 
 const LoginSignup = () => {
@@ -8,6 +8,7 @@ const LoginSignup = () => {
   const toggleForm = () => {
     setIsSignup(!isSignup);
   };
+
   return (
     <div>
       <div className={`container ${isSignup ? "right-panel-active" : ""}`}>
