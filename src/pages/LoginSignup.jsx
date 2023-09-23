@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../assets/styles/LoginSignup.css";
 import { FaFacebookF, FaGoogle, FaTwitter } from "react-icons/fa";
+import Navbar from "../components/Navbar/Navbar";
 
 const LoginSignup = () => {
   const [isSignup, setIsSignup] = useState(false);
@@ -10,7 +11,9 @@ const LoginSignup = () => {
   };
 
   return (
-    <div>
+    <>
+    <Navbar/>
+    <div className="login-page">
       <div className={`container ${isSignup ? "right-panel-active" : ""}`}>
         <div className="form-container sign-up-container">
           <form action="">
@@ -30,7 +33,7 @@ const LoginSignup = () => {
             <input type="text" name="name" placeholder="Name" />
             <input type="email" name="email" placeholder="Email" />
             <input type="password" name="password" placeholder="Password" />
-            <button>SignUp</button>
+            <button className="button">SignUp</button>
           </form>
         </div>
         <div className="form-container sign-in-container">
@@ -76,6 +79,7 @@ const LoginSignup = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

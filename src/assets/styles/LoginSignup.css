@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
 
-body {
-  /* background: #000000; */
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* flex-direction: column;
+.login-page {
+  background: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   font-family: "Montserrat", sans-serif;
-  height: 100vh; */
-  /* margin: -20px 0 50px; */
+  height: 100vh;
+  margin: -20px 0 50px;
 }
 
 h1 {
@@ -62,7 +62,9 @@ button:focus {
 
 button.ghost {
   background-color: transparent;
-  border-color: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #ffffff;
+  padding: 8px 20px;
 }
 
 form {

@@ -58,7 +58,7 @@ const Slider = () => {
     ];
   return (
     <div>
-        <div className="container">
+        <div className="containerslider">
       <div className="loadbar" style={{ width: `${loadingProgress}%` }}></div>
       <div id="slide" ref={slideRef}>
         {data.map((item) => (
