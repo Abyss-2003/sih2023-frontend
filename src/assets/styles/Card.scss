@@ -46,6 +46,54 @@ body {
   place-items: center;
 }
 
+.card_details {
+  margin-top: -5rem;
+  height: 100%;
+  width: 90%;
+  .cd_heading{
+    display: flex;
+    width: 100%;
+    height: 60%;
+    justify-content: center;
+    align-items: center;
+  }
+  .cd_heading h1{
+    color: white;
+    font-size: 3rem;
+  }
+  .cd_heading span{
+    color: red;
+    font-weight: medium;
+  }
+  .para_1{
+    margin-top: 1rem;   
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 20%;
+    width: 100%;
+    color: white;
+    font-size: 2rem;
+    padding-left: 15rem;
+    span{
+      color: red;
+    }
+  }
+  .para_2{
+    margin-bottom: -3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    height: 20%;
+    width: 100%;
+    color: white;
+    font-size: 2rem;
+    padding-right: 15rem;
+  }
+}
+
 /*==================== SERVICE CARD ====================*/
 .card__container {
   display: flex;
@@ -55,7 +103,7 @@ body {
   width: 100%;
   max-width: 90%;
   margin: auto;
-  padding: 60px 0;
+  padding: 10px 0;
 }
 .card__bx {
   --dark-color: #2e2e2e;

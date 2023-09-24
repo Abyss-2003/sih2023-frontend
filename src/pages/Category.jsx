@@ -1,10 +1,7 @@
 import React from "react";
 import Card from "../components/Card";
-// import PhotoCameraIcon from '@mui/icons-material/PhotoCamera';
 import {MdPhotoCamera} from "react-icons/md";
 import {MdVideoCameraFront} from "react-icons/md";
-// import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
-// import DashboardIcon from '@mui/icons-material/Dashboard';
 import {MdDashboard} from "react-icons/md";;
 
 const cardData = [
@@ -31,9 +28,21 @@ const cardData = [
   },
 ];
 
-const Category = () => {
+const Category = ({userDetails}) => {
+  console.log(userDetails);
   return (
     <section className="container">
+      <section className="card_details">
+        <div className="cd_heading">
+            <h1>Hello, <span>{userDetails?.username.toUpperCase()}</span> !</h1>
+        </div>
+        <div className="para_1">
+          <p>Ready to become <span>FIT</span></p>
+        </div>
+        <div className="para_2">
+          <p>like never before ?</p>
+        </div>
+      </section>
       <section className="card__container">
         {cardData.map((card, index) => (
           <Card
