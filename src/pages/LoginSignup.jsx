@@ -28,7 +28,7 @@ const LoginSignup = () => {
     e.preventDefault()
     try {
       const token = localStorage.getItem('token')
-      const response = await axios.post(`http://localhost:8000/${type}`,details,{
+      const response = await axios.post(`https://sih2023-backend.onrender.com/${type}`,details,{
         headers : {
           'Content-Type' : 'application/json'
         }

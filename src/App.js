@@ -15,7 +15,7 @@ function App() {
     try {
       const token = localStorage.getItem('token');
       if (token) {
-        const response = await axios.get(`http://localhost:8000/getuser`, {
+        const response = await axios.get(`https://sih2023-backend.onrender.com/getuser`, {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`

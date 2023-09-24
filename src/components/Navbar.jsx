@@ -23,7 +23,7 @@ const Navbar = ({userDetails}) => {
     }
     else{
       try {
-        const response = await axios.delete(`http://localhost:8000/logout`, {
+        const response = await axios.delete(`https://sih2023-backend.onrender.com/logout`, {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
@@ -47,7 +47,7 @@ const Navbar = ({userDetails}) => {
           <div className="sub_nav">
       <div className="navbar">
       <div className="navbar__left" >
-        <Link to="/" onClick={close}><img src={Logo} alt="" className="logo" style={{width:"60px", marginRight: '13px'}}/></Link>
+        <Link to={userDetails ? '/home' : '/'} onClick={close}><img src={Logo} alt="" className="logo" style={{width:"60px", marginRight: '13px'}}/></Link>
       <h1 style={{color: 'red', fontSize: '23px', letterSpacing:'1.5px'}}>FIT SIMULATE</h1>
       </div>
       <div className="navbar__right">
