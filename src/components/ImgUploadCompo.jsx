@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import ReactDOM from "react-router-dom";
 import shortid from "https://cdn.skypack.dev/shortid@2.2.16";
 import "../assets/styles/Img_upload_compo.scss";
 
-const Img_upload_compo = () => {
+const ImgUploadCompo = (props) => {
   const [selectedfile, SetSelectedFile] = useState([]);
   const [Files, SetFiles] = useState([]);
 
@@ -114,7 +113,6 @@ const Img_upload_compo = () => {
                         const {
                           id,
                           filename,
-                          filetype,
                           fileimage,
                           datetime,
                           filesize,
@@ -171,7 +169,6 @@ const Img_upload_compo = () => {
                         const {
                           id,
                           filename,
-                          filetype,
                           fileimage,
                           datetime,
                           filesize,
@@ -229,4 +226,4 @@ const Img_upload_compo = () => {
   );
 };
 
-export default Img_upload_compo;
+export default ImgUploadCompo;

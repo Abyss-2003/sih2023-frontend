@@ -4,7 +4,7 @@ import '../assets/styles/Img_upload_compo.scss'
 import analysis1 from "../assets/images/analysis1.jpeg";
 import analysis2 from "../assets/images/analysis2.jpeg";
 
-function Vdo_upload() {
+function VdoUpload() {
   const Modeldata = {
     resultData: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque officia vitae quidem repudiandae mollitia consequuntur libero quo perferendis commodi molestias a omnis cumque velit dolores, in veritatis iusto. Pariatur totam, aut rem a animi nihil reprehenderit debitis perspiciatis sit iusto blanditiis iste aperiam quis atque! Praesentium vero culpa ut fugit!",
     resultImage1: analysis1,
@@ -32,4 +32,4 @@ function Vdo_upload() {
   )
 }
 
-export default Vdo_upload
+export default VdoUpload

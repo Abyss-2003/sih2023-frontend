@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 import "../assets/styles/Image_upload.scss";
-import Img_upload_compo from "../components/Img_upload_compo";
+import ImgUploadCompo from "../components/ImgUploadCompo";
 import analysis1 from "../assets/images/analysis1.jpeg";
 import WebcamStreamCapture from "../components/WebcamStreamCapture";
 
-function Image_upload() {
+function ImageUpload() {
   const [toggle, setToggle] = useState(false);
   const ImageData = {
     result:
@@ -18,10 +18,10 @@ function Image_upload() {
           <button style={{borderRadius: '0', backgroundColor: toggle?'#aa0000':'transparent'}} onClick={()=>setToggle(true)}>Upload Image</button>
           <button style={{borderRadius: '0', backgroundColor: toggle?'transparent':'#aa0000'}} onClick={()=>setToggle(false)}>Upload Video</button>
         </div>
-        {toggle?<Img_upload_compo />:<WebcamStreamCapture/>}
+        {toggle?<ImgUploadCompo />:<WebcamStreamCapture/>}
       </div>
       <div class="item-iu right">
-        <h1 style={{ fontSize: "30px" }}>Analysis:</h1>
+    <h1 style={{ fontSize: "30px" }}>Analysis:</h1>
         <p>{ImageData.result}</p>
         <br />
         <br />
@@ -30,9 +30,9 @@ function Image_upload() {
         <div className="imagess" style={{ display: "flex" }}>
           <img src={ImageData.resultImage} style={{ width: "350px" }} alt="" />
         </div>
-      </div>
+    </div>
     </div>
   );
 }
 
-export default Image_upload;
+export default ImageUpload;
