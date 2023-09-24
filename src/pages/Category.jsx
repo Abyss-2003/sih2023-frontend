@@ -8,22 +8,22 @@ const cardData = [
   {
     color: "#89ec5b",
     icon: <MdPhotoCamera/>,
-    title: "Upload Image",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    title: "Know Your Exercise",
+    description: "We can help you know what exercise you are performing",
     link:"/image-upload"
   },
   {
     color: "#eb5ae5",                                                
     icon: <MdVideoCameraFront />,
-    title: "Upload Video / Live",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    title: "Virtual Trainer",
+    description: "Our virtual trainer can correct your workout.",
     link:"/video-upload"
   },
   {
     color: "#5b98eb",
     icon: <MdDashboard />,
-    title: "Dashboard",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    title: "Track Progress",
+    description: "Just to let you know how you are performing",
     link:"#"
   },
 ];
@@ -34,7 +34,7 @@ const Category = ({userDetails}) => {
     <section className="container">
       <section className="card_details">
         <div className="cd_heading">
-            <h1>Hello, <span>{userDetails?.username.toUpperCase()}</span> !</h1>
+            <h1>Welcome, <span>{userDetails?.username.toUpperCase()}</span> !</h1>
         </div>
         <div className="para_1">
           <p>Ready to become <span>FIT</span></p>

@@ -12,7 +12,7 @@ function Card({ color, icon, title, description ,link}) {
       <div className="card__content">
         <h3>{title}</h3>
         <p>{description}</p>
-        <Link to={link}>Click Now</Link>
+        <Link to={link}>{"Explore"}</Link>
       </div>
     </div>
   </div>
