@@ -48,7 +48,7 @@ const Navbar = ({userDetails}) => {
       <div className="navbar">
       <div className="navbar__left" >
         <Link to="/" onClick={close}><img src={Logo} alt="" className="logo" style={{width:"60px", marginRight: '13px'}}/></Link>
-      <h1 style={{color: 'red', fontSize: '20px', letterSpacing:'1.5px'}}>FIT SIMULATE</h1>
+      <h1 style={{color: 'red', fontSize: '23px', letterSpacing:'1.5px'}}>FIT SIMULATE</h1>
       </div>
       <div className="navbar__right">
         <Link to={userDetails ? '/home' : '/'}><h4 className="navbar__text">Home</h4></Link>
