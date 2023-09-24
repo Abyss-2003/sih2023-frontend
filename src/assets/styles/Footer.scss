@@ -1,5 +1,5 @@
 .mainFooter{
-    background:red;
+    background: #aa0000;
     padding:2rem;
     .footerContainer{
         .subContainer{
@@ -20,13 +20,13 @@
                     }
                     .subBtn{
                         height:2.3rem;
-                        padding: 1em;
-                        background: rgb(163, 0, 0);
+                        background: #aa0000;
                         display: flex;
                         align-items: center;
                         justify-content: center; 
                         color: white;
                         border: 2px solid white;
+                        border-radius: 0;
                     }
                     .subBtn:hover{
                         color: red;
@@ -40,7 +40,7 @@
         // flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        background:red;
+        background:#aa0000;
         min-height: 30vh;
         .subFootContainer{
             display: flex;
@@ -67,7 +67,7 @@
                 font-weight: 500; 
             }
             .footText:hover{
-                color:rgb(163, 0, 0);
+                color: black;
             }
           }
           @media(max-width:1090px){

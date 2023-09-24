@@ -26,31 +26,31 @@ const Slider = () => {
       id: 1,
       imgUrl: workout,
       desc: "Some beautiful roads cannot be discovered without getting loss.",
-      name: "EXPLORE NATURE",
+      name: "Now Worout 24/7!",
     },
     {
       id: 2,
       imgUrl: coach,
       desc: "Some beautiful roads cannot be discovered without getting loss.",
-      name: "EXPLORE NATURE",
+      name: "Digital Imitation Of A Gym Trainer",
     },
     {
       id: 3,
       imgUrl: stat,
       desc: "Some beautiful roads cannot be discovered without getting loss.",
-      name: "EXPLORE NATURE",
+      name: "Get Personalised Dashboard",
     },
     {
       id: 4,
       imgUrl: workout,
       desc: "Some beautiful roads cannot be discovered without getting loss.",
-      name: "EXPLORE NATURE",
+      name: "Now Workout 24/7!",
     },
     {
       id: 5,
       imgUrl: coach,
       desc: "Some beautiful roads cannot be discovered without getting loss.",
-      name: "EXPLORE NATURE",
+      name: "Digital Imitation Of A Gym Trainer",
     },
   ];
   return (

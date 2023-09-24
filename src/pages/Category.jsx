@@ -13,14 +13,14 @@ const cardData = [
     icon: <MdPhotoCamera/>,
     title: "Upload Image",
     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    link:"#"
+    link:"/image-upload"
   },
   {
     color: "#eb5ae5",                                                
     icon: <MdVideoCameraFront />,
-    title: "Upload video",
+    title: "Upload Video / Live",
     description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    link:"#"
+    link:"/video-upload"
   },
   {
     color: "#5b98eb",
