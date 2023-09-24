@@ -11,11 +11,11 @@ function VdoUpload() {
     resultImage2: analysis2
   }
   return (
-    <div class="upload">
-    <div class="item-iu left" >
+    <div className="upload">
+    <div className="item-iu left" >
     <WebcamStreamCapture/>
     </div>
-    <div class="item-iu right">
+    <div className="item-iu right">
     <h1 style={{ fontSize: "30px" }}>Analysis:</h1>
         <p>{Modeldata.resultData}</p>
         <br />

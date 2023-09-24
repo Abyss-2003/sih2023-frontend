@@ -1,10 +1,17 @@
 import React, { useState } from "react";
+import axios from "axios";
 import shortid from "https://cdn.skypack.dev/shortid@2.2.16";
 import "../assets/styles/Img_upload_compo.scss";
+import { useDispatch } from "react-redux";  //redux-code
+import { loadImage, loadExercise } from "../redux/features/imageSlice";   //redux-code
+
 
 const ImgUploadCompo = (props) => {
   const [selectedfile, SetSelectedFile] = useState([]);
   const [Files, SetFiles] = useState([]);
+  
+  //redux-code
+  const dispatch = useDispatch()
 
   const filesizes = (bytes, decimals = 2) => {
     if (bytes === 0) return "0 Bytes";
@@ -59,12 +66,37 @@ const ImgUploadCompo = (props) => {
     // form reset on submit
     e.target.reset();
     if (selectedfile.length > 0) {
-      for (let index = 0; index < selectedfile.length; index++) {
-        SetFiles((preValue) => {
-          return [...preValue, selectedfile[index]];
-        });
-      }
-      SetSelectedFile([]);
+
+      //my-code
+      const formData = new FormData();
+      formData.append("file", selectedfile[0]);
+      // try {
+      //   const response = await axios.post(`http://146.190.10.219:8000/predict_to_know_the_exericise`,formData,{
+      //     headers : {
+      //       'Content-Type' : 'multipart/form-data',
+      //       "Access-Control-Allow-Origin" : '*'
+      //     }
+      //   })
+      //   console.log(response);
+      //   // if(response.data?.token){
+        
+      //   // }
+      // } catch (error) {
+      //   console.log(error);
+      // }
+      dispatch(loadImage(selectedfile[0]))
+      const num = Math.floor(Math.random()*3)
+      console.log("num : ", num);
+      const arr = ["Deadlift", "Russian Twist", "Shoulder Press"]
+      dispatch(loadExercise(arr[num]))
+      //my-code
+
+      // for (let index = 0; index < selectedfile.length; index++) {
+      //   SetFiles((preValue) => {
+      //     return [...preValue, selectedfile[index]];
+      //   });
+      // }
+      // SetSelectedFile([]);
     } else {
       alert("Please select file");
     }
