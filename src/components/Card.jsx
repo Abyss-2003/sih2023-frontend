@@ -1,5 +1,6 @@
 import React from 'react';
 import '../assets/styles/Card.scss';
+import { Link } from 'react-router-dom';
 
 function Card({ color, icon, title, description ,link}) {
   return (
@@ -11,7 +12,7 @@ function Card({ color, icon, title, description ,link}) {
       <div className="card__content">
         <h3>{title}</h3>
         <p>{description}</p>
-        <a href={link}>Click Now!!</a>
+        <Link to={link}>Click Now</Link>
       </div>
     </div>
   </div>

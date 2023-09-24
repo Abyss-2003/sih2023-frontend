@@ -53,7 +53,7 @@ const WebcamStreamCapture = () => {
   
     return (
       <div className='vdo-upload'>
-        <Webcam audio={false} ref={webcamRef} />
+        <Webcam style={{height: '400px'}} audio={false} ref={webcamRef} />
         {capturing ? (
           <button className='btn-vdo' onClick={handleStopCaptureClick}>Stop Capture</button>
         ) : (

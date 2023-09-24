@@ -13,10 +13,10 @@ button {
 .btn-vdo{
   box-sizing: border-box;
   appearance: none;
-  background-color: transparent;
-  border: 2px solid  rgb(241, 67, 67);
-  border-radius: 0.6em;
-  color:  rgb(241, 67, 67);
+  background-color: #aa0000;
+  border: 2px solid  #aa0000;
+  border-radius: 0;
+  color:  #aa0000;
   cursor: pointer;
   display: flex;
   align-self: center;
@@ -29,7 +29,7 @@ button {
   text-align: center;
   text-transform: uppercase;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
+  font-weight: 500;
 
   &:hover,
   &:focus {

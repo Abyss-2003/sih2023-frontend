@@ -158,6 +158,7 @@ const Img_upload_compo = () => {
                       <button
                         type="submit"
                         className="btn btn-primary form-submit"
+                        style={{borderRadius: '0', margin: 'auto'}}
                       >
                         Upload
                       </button>

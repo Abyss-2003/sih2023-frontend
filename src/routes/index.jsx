@@ -4,7 +4,6 @@ import LoginSignup from '../pages/LoginSignup'
 import Category from '../pages/Category'
 import Image_upload from '../pages/Image_upload'
 import Vdo_upload from '../pages/Vdo_upload'
-import WebcamStreamCapture from '../components/WebcamStreamCapture'
 
 export default function Home({userDetails}){
     return(
@@ -12,7 +11,8 @@ export default function Home({userDetails}){
             <Route path='/' element={<Main userDetails={userDetails}/>}/>
             <Route path='/login' element={<LoginSignup/>}/>
             <Route path='/home' element={<Category userDetails={userDetails}/>}/>
-            <Route path='/image' element={<Vdo_upload/>}/>
+            <Route path='/image-upload' element={<Image_upload/>}/>
+            <Route path='/video-upload' element={<Vdo_upload/>}/>
         </Routes>
     )
 }
