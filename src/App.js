@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import axios from 'axios';
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Provider } from "react-redux"
 import { store } from './redux/store'
 import Home from './routes'

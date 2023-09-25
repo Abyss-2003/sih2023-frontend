@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import {toast} from "react-toastify"
-import 'react-toastify/dist/ReactToastify.css';
 import "../assets/styles/LoginSignup.scss";
 import { FaFacebookF, FaGoogle, FaTwitter } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";

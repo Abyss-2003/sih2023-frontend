@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import shortid from "https://cdn.skypack.dev/shortid@2.2.16";
+import { v4 as uuidv4 } from 'uuid';
 import "../assets/styles/Img_upload_compo.scss";
 import { useDispatch } from "react-redux";  //redux-code
 import { loadImage, loadExercise } from "../redux/features/imageSlice";   //redux-code
@@ -34,7 +34,7 @@ const ImgUploadCompo = (props) => {
           return [
             ...preValue,
             {
-              id: shortid.generate(),
+              id: uuidv4(),
               filename: e.target.files[i].name,
               filetype: e.target.files[i].type,
               fileimage: reader.result,
