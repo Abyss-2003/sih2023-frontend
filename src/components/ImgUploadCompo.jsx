@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { v4 as uuidv4 } from 'uuid';
+import {toast} from 'react-toastify'
 import "../assets/styles/Img_upload_compo.scss";
 import { useDispatch } from "react-redux";  //redux-code
-import { loadImage, loadExercise } from "../redux/features/imageSlice";   //redux-code
+import { loadImage, loadExercise , openLoading, closeLoading} from "../redux/features/imageSlice";   //redux-code
 
 
 const ImgUploadCompo = (props) => {
   const [selectedfile, SetSelectedFile] = useState([]);
   const [Files, SetFiles] = useState([]);
+  const [newfile, setNewFile] = useState();
   
   //redux-code
   const dispatch = useDispatch()
@@ -27,6 +29,11 @@ const ImgUploadCompo = (props) => {
     let images = [];
     for (let i = 0; i < e.target.files.length; i++) {
       images.push(e.target.files[i]);
+
+      //mycode
+      setNewFile(e.target.files[i])
+      //mycode
+
       let reader = new FileReader();
       let file = e.target.files[i];
       reader.onloadend = () => {
@@ -69,26 +76,36 @@ const ImgUploadCompo = (props) => {
 
       //my-code
       const formData = new FormData();
-      formData.append("file", selectedfile[0]);
-      // try {
-      //   const response = await axios.post(`http://146.190.10.219:8000/predict_to_know_the_exericise`,formData,{
-      //     headers : {
-      //       'Content-Type' : 'multipart/form-data',
-      //       "Access-Control-Allow-Origin" : '*'
-      //     }
-      //   })
-      //   console.log(response);
-      //   // if(response.data?.token){
-        
-      //   // }
-      // } catch (error) {
-      //   console.log(error);
-      // }
-      dispatch(loadImage(selectedfile[0]))
-      const num = Math.floor(Math.random()*3)
-      console.log("num : ", num);
-      const arr = ["Deadlift", "Russian Twist", "Shoulder Press"]
-      dispatch(loadExercise(arr[num]))
+      formData.append("file", newfile);
+      try {
+        dispatch(openLoading())
+        const response = await axios.post(`http://146.190.10.219:8000/predict_to_know_the_exericise`,formData,{
+          headers : {
+            'Content-Type' : `multipart/form-data; boundary=${formData._boundary}`,
+          }
+        })
+        if(response.data?.Exercise?.length){
+          dispatch(loadImage(selectedfile[selectedfile.length-1]))
+          dispatch(loadExercise(response.data.Exercise[0]))
+        }
+        else{
+          dispatch(loadExercise("none"))
+        }
+        dispatch(closeLoading())
+      } catch (error) {
+        console.log(error);
+        toast.error(`Could not detect image`, {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          });
+        // console.log(error);
+      }
       //my-code
 
       // for (let index = 0; index < selectedfile.length; index++) {
@@ -194,7 +211,7 @@ const ImgUploadCompo = (props) => {
                       </button>
                     </div>
                   </form>
-                  {Files.length > 0 ? (
+                  {Files.length > 0 ? ( 
                     <div className="kb-attach-box">
                       <hr />
                       {Files.map((data, index) => {

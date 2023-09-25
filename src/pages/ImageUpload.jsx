@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 
 function ImageUpload() {
   const [toggle, setToggle] = useState(true);
-  const {image, exercise} = useSelector((store) => store.picture)
+  const {image, exercise, loading} = useSelector((store) => store.picture)
 
   const details = [
     {
@@ -38,12 +38,12 @@ function ImageUpload() {
         {toggle ? <ImgUploadCompo /> : <WebcamStreamCapture />}
       </div>
       <div className="item-iu right">
-        {image?.fileimage && <div key={image?.id}>
+        {image?.fileimage && exercise!=="none" && <div key={image?.id}>
           <h1 style={{ fontSize: "30px" , textAlign : "center", fontWeight : "bolder", letterSpacing : "2px"}}>Analysis</h1>
           <p className="exercise_heading">Exercise : <span>{exercise}</span></p>
           <p>{details.filter((detail)=> {
               return detail.type === exercise
-          })[0].data}</p>
+          })[0]?.data}</p>
           <br />
           <br />
           <h1 style={{ fontSize: "25px", fontWeight : "bolder"}}>Analysed Image</h1>
@@ -52,8 +52,12 @@ function ImageUpload() {
             <img src={image.fileimage} style={{ width: "350px" }} alt="" />
           </div>
         </div>}
+        {image?.fileimage && exercise==="none" && <div className="after_upload">
+          <h1 style={{color : "red"}}>Please provide a valid image</h1>
+        </div> }
         {!image?.fileimage && <div className="after_upload">
-          <h1>Your analysis will be displayed here</h1>
+          {loading && <h1>Loading....</h1>}
+          {!loading && <h1 style={{color : `${exercise==="none"? "red" : "gray"}`}}>{exercise==="none"? "Please provide a valid image":"Your analysis will be displayed here"}</h1>}
         </div> }
       </div>
     </div>
